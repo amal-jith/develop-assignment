@@ -1,9 +1,45 @@
 WordPress Developer Assignment - 1 Page Build
+
 1. Deliverables
-Live Website Link (Public Demo URL): https://sour-zipper.localsite.io
 
-GitHub Repository Link: https://github.com/amal-jith/develop-assignment.git
-
-Time Taken for Completion: Approximately 18 hours.
+  Live Website Link (Public Demo URL): https://sour-zipper.localsite.io
+  GitHub Repository Link: https://github.com/amal-jith/develop-assignment.git
+  Time Taken for Completion: Approximately 18 hours.
 
 2. Implementation Details
+
+  Theme/Builder Used
+  Active Theme: Twenty Twenty-Four  
+  Page Builder: Elementor (Free)
+
+  Plugins Used and Their Purpose
+  
+    Elementor: Core page builder used for design, layout, and achieving visual match to Figma.  
+    Autoptimize: Optimization tool used to aggregate, minify, and defer CSS/JS to eliminate render-blocking resources and improve load times.  
+    Converter for Media: Used to compress all images and serve them in the WebP format, meeting the image optimization requirement.  
+    Forminator: Used for building any required forms on the page.  
+    Ultimate Addons for Elementor Lite: Used for creating advanced Elementor blocks and custom widgets.  
+
+3. Optimization Steps (Speed, Images, Caching)
+  
+  The primary focus was on meeting the Core Web Vitals targets and resolving all critical Lighthouse audits.
+
+    Render Blocking CSS/JS (LCP Fix):
+      Configured Autoptimize to aggregate CSS files and enabled the "Eliminate render-blocking CSS" (Inline critical CSS) option to prioritize the main content load.
+    
+    Image Optimization (WebP):  
+      Installed and configured Converter for Media to compress all images and serve them in the required WebP format.
+
+    Database Cleanup:  
+      Performed a wp search-replace operation to fix the hardcoded local URLs, ensuring all assets correctly load over HTTPS on the Live Link.
+
+4. Lighthouse Scores (Post-Optimization)
+
+    Note on Scoring: The scores below were captured on the local environment for accuracy. The Mobile LCP on the public Live Link (https://sour-zipper.localsite.io) was observed to be artificially
+    inflated ($3.7\text{s}$) due to the inherent throttling and proxy latency of the Local by Flywheel Live Link feature, which does not accurately represent the optimization effort.
+    The scores below reflect performance in a stable, optimized environment.
+
+5. Key Challenges
+
+    Live Link URL Mismatch: The primary challenge was resolving the image and asset loading failure on the Live Link, which required a targeted wp search-replace command to correctly update all local http:// URLs to the Live Link's https:// proxy URL.    
+    Performance Measurement Disparity: The greatest challenge was accurately measuring Core Web Vitals, as the Live Link latency artificially inflated the Mobile LCP score, necessitating the use of Local scores for demonstration of optimization success.
