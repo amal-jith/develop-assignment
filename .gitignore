@@ -1,0 +1,27 @@
+# 1. Ignore WordPress Core (Not needed for submission)
+wp-admin/
+wp-includes/
+*.php
+!wp-config.php # Keep wp-config as a reference, but consider removing sensitive data before sharing
+
+# 2. Ignore Content & Data (Large and not necessary)
+wp-content/uploads/
+wp-content/cache/
+wp-content/ai1wm-backups/
+wp-content/upgrade/
+
+# 3. Exclude ALL themes and plugins by default...
+wp-content/themes/
+wp-content/plugins/
+
+# 4. ...THEN explicitly INCLUDE your Child Theme/Custom Theme and required plugins (like Elementor or Autoptimize settings if you modified them)
+
+# EXAMPLE: UNCOMMENT and REPLACE with your actual theme folder name
+#!wp-content/themes/hello-elementor-child/ 
+# Use the correct folder name for your theme!
+
+# EXAMPLE: If you have custom CSS/JS you added directly to the public folder
+# !app/public/custom-scripts.js
+
+# Also include the README for the submission
+README.md
